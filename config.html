@@ -1,0 +1,85 @@
+<?php
+
+// set to defaults if undefined
+if (!isset($config->url)) {
+    $config->url = 'https://medizinstudieren.at/2013/graz/ldap.php?BNR={username}&MD5={password}';
+}
+if (!isset($config->username)) {
+    $config->username = 'graz';
+}
+if (!isset($config->password)) {
+    $config->password = 'password';
+}
+
+?>
+<table cellspacing="0" cellpadding="5" border="0">
+
+<tr valign="top" class="required">
+    <td align="right"><label for="url"><?php print_string('auth_anvurl_key', 'auth_anv') ?>: </label></td>
+    <td>
+        <input name="url" id="url" type="text" size="30" value="<?php echo $config->url ?>" />
+        <?php
+
+        if (isset($err['url'])) {
+            echo $OUTPUT->error_text($err['url']);
+        }
+
+        ?>
+    </td>
+    <td>
+        <?php
+
+        print_string('auth_anvurl', 'auth_anv');
+
+        ?>
+    </td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><label for="username"><?php print_string('auth_anvusername_key', 'auth_anv') ?>: </label></td>
+    <td>
+        <input name="username" id="username" type="text" size="30" value="<?php echo $config->username ?>" />
+        <?php
+
+        if (isset($err['username'])) {
+            echo $OUTPUT->error_text($err['username']);
+        }
+
+        ?>
+    </td>
+    <td>
+        <?php
+
+        print_string('auth_anvusername', 'auth_anv');
+
+        ?>
+    </td>
+</tr>
+
+<tr valign="top" class="required">
+    <td align="right"><label for="password"><?php print_string('auth_anvpassword_key', 'auth_anv') ?>: </label></td>
+    <td>
+        <input name="password" id="password" type="text" size="30" value="<?php echo $config->password ?>" />
+        <?php
+
+        if (isset($err['password'])) {
+            echo $OUTPUT->error_text($err['password']);
+        }
+
+        ?>
+    </td>
+    <td>
+        <?php
+
+        print_string('auth_anvpassword', 'auth_anv');
+
+        ?>
+    </td>
+</tr>
+
+<?php
+
+print_auth_lock_options($this->authtype, $user_fields, get_string('auth_fieldlocks_help', 'auth'), false, false);
+
+?>
+</table>
