@@ -4,6 +4,10 @@ Moodle 2.x authentication plugin for the admission procedure used by the Austria
 credentials is valid. HTTP 200 grants access, any other code is considered as a failed login. The password is transmitted as a MD5 hash, but since this is
 already too weak to provide any substantial security, the use of HTTPS for the communication with the ANV server is highly recommended!
 
+## Requirements
+* Moodle (>= 2.4)
+* php-curl
+
 ## Installation
 
 The recommended way to install this plugin is through `git submodules`. In the root of your moodle code tree run the following:
