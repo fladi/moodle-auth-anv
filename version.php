@@ -19,7 +19,7 @@
  *
  * @package    auth
  * @subpackage anv
- * @copyright  2013 Michael Fladischer <michael.fladischer@medunigraz.at>
+ * @copyright  2016 Michael Fladischer <michael.fladischer@medunigraz.at>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
