@@ -26,7 +26,7 @@ class auth_plugin_anv extends auth_plugin_base {
     /**
      * Constructor.
      */
-    function auth_plugin_anv() {
+    function __construct() {
         $this->authtype = 'anv';
         $this->config = get_config('auth/anv');
         $this->config->field_updatelocal_email = false;
